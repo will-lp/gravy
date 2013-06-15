@@ -3,7 +3,7 @@ Gravy
 
 Gravy is an expression tree builder to query data structures. 
 
-The objective is to create an API which can build object oriented expression trees. These can be matched against a dictionary, which will provide the code to process the expressions, and can be used to query any data structure.
+The objective is to create an API which can build object oriented expression trees based on a DSL. These can be matched against a dictionary, which will provide the code to process the expressions, and can be used to query any data structure.
 
 Current status (2013-06-15):
 
