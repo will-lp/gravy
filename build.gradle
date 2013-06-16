@@ -1,0 +1,28 @@
+apply plugin: 'groovy'
+
+repositories { 
+  //mavenCentral() 
+  flatDir {
+    //dirs System.properties.'groovy.home' + '/embeddable/groovy-all-2.1.4.jar'
+    //dirs System.properties.'groovy.home' + '/embeddable/' 
+    dirs "/media/CHRONICLES/info/groovy/groovy/embeddable/groovy-all-2.1.4.jar"
+  }
+}
+
+//dependencies { groovy 'org.codehaus.groovy:groovy:2.1.4' }
+
+sourceSets {
+  main {
+    groovy {
+      srcDirs = ['src/main']
+    }
+  }
+  
+  test {
+    groovy {
+      srcDirs = ['src/test']
+    }
+  }
+}
+
+
