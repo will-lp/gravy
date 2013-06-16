@@ -1,10 +1,11 @@
 package org.gravy.query
 
-import org.gravy.expression.component.Condition
-import org.gravy.expression.component.GroupBy
-import org.gravy.expression.component.Limit
-import org.gravy.expression.component.Projection
-import org.gravy.expression.component.Source
+import org.gravy.query.component.Condition
+import org.gravy.query.component.GroupBy
+import org.gravy.query.component.Limit
+import org.gravy.query.component.Projection
+import org.gravy.query.component.Source
+
 
 
 /**

@@ -2,9 +2,6 @@ package org.latitude
 
 import java.lang.reflect.Method
 
-import javassist.util.proxy.MethodFilter
-import javassist.util.proxy.MethodHandler
-import javassist.util.proxy.ProxyFactory
 
 /**
  * Ease mocking references from objects.
@@ -33,20 +30,23 @@ class Latitude {
 	}
 	
 	
-	static <T> T createJavassistTraceableObject(Class<T> clazz) {
-		def proxy = new ProxyFactory()
-		proxy.superclass = clazz
-		proxy.filter = { true } as MethodFilter
-		
-		def handler = { Object self, Method m, Method proceed, Object[] args ->
-			proceed.returnType.case {
-				when Void then null
-				otherwise { Latitude.createTraceableObject proceed.returnType }
-			}
-		} as MethodHandler
-		
-		def newClazz = proxy.createClass()
-		def instance = newClazz.newInstance()
-		instance.handler = handler
-	}
+	/**
+	 * Failed experiment using javassist: can't proxy final classes.
+	 */
+//	static <T> T createJavassistTraceableObject(Class<T> clazz) {
+//		def proxy = new ProxyFactory()
+//		proxy.superclass = clazz
+//		proxy.filter = { true } as MethodFilter
+//		
+//		def handler = { Object self, Method m, Method proceed, Object[] args ->
+//			proceed.returnType.case {
+//				when Void then null
+//				otherwise { Latitude.createTraceableObject proceed.returnType }
+//			}
+//		} as MethodHandler
+//		
+//		def newClazz = proxy.createClass()
+//		def instance = newClazz.newInstance()
+//		instance.handler = handler
+//	}
 }

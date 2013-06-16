@@ -5,6 +5,14 @@ import org.gravy.query.Query;
 import org.latitude.Latitude
 
 
+/**
+ * The expression resolver must be able to respond to any command 
+ * from the query after the parse from the GravyASTTransformation.
+ * 
+ * @author will_lp
+ *
+ * @param <T>
+ */
 class ExpressionResolver<T> {
   
   List<T> froms = []
@@ -33,21 +41,29 @@ class ExpressionResolver<T> {
     projection << args
   }
 	
+	void group() {}
   
-  void and() {
-		
-	}
+  void and() {}
+	void or() {}
+	void not() {}
+  void where() {}
 	
+	void avg() {}
+	void count() {}
+	void sum() {}
 	
-	void or() {
-		
-	}
-  
+	void multiply() {}
+	void add() {}
+	void power() {}
+  void divide() {}
+	void subtract() {}
 	
-  void where() {
-		
-	}
-  
+	void eq() {}
+	void ne() {}
+	void gt() {}
+	void ge() {}
+	void lt() {}
+	void le() {}
 	
   Query createExpression() {
     new Query(

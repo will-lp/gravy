@@ -1,6 +1,7 @@
 package org.gravy.query.component
 
-import org.gravy.expression.operator.Operator
+import org.gravy.query.operator.Operator
+
 
 
 /**
